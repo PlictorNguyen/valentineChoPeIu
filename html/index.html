@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Valentine của tụi mình 💘</title>
+    <style>
+         :root {
+            --bg1: #0b1020;
+            --bg2: #1a0b2e;
+            --pink: #ff4d8d;
+            --rose: #ff7ab6;
+            --glow: 0 0 20px rgba(255, 77, 141, .35), 0 0 60px rgba(255, 122, 182, .18);
+            --card: rgba(255, 255, 255, .08);
+            --card2: rgba(255, 255, 255, .12);
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .7);
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html,
+        body {
+            height: 100%
+        }
+        
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background: radial-gradient(1200px 800px at 20% 20%, rgba(255, 77, 141, .18), transparent 55%), radial-gradient(900px 700px at 80% 30%, rgba(255, 122, 182, .14), transparent 55%), linear-gradient(160deg, var(--bg1), var(--bg2));
+            overflow-x: hidden;
+        }
+        /* stars */
+        
+        .stars,
+        .stars:before,
+        .stars:after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, .8), transparent 60%), radial-gradient(1px 1px at 30% 80%, rgba(255, 255, 255, .8), transparent 60%), radial-gradient(1px 1px at 50% 40%, rgba(255, 255, 255, .8), transparent 60%), radial-gradient(1px 1px at 70% 70%, rgba(255, 255, 255, .8), transparent 60%), radial-gradient(1px 1px at 90% 30%, rgba(255, 255, 255, .8), transparent 60%), radial-gradient(1px 1px at 25% 35%, rgba(255, 255, 255, .6), transparent 60%), radial-gradient(1px 1px at 85% 85%, rgba(255, 255, 255, .6), transparent 60%);
+            opacity: .35;
+            pointer-events: none;
+            animation: twinkle 6s ease-in-out infinite alternate;
+        }
+        
+        .stars:before {
+            opacity: .25;
+            filter: blur(.2px);
+            animation-duration: 9s;
+        }
+        
+        .stars:after {
+            opacity: .18;
+            filter: blur(.4px);
+            animation-duration: 12s;
+        }
+        
+        @keyframes twinkle {
+            from {
+                transform: translateY(0);
+                opacity: .25
+            }
+            to {
+                transform: translateY(-6px);
+                opacity: .42
+            }
+        }
+        
+        .wrap {
+            min-height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px
+        }
+        
+        .container {
+            width: min(1040px, 100%);
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 22px;
+        }
+        
+        @media (max-width: 920px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: linear-gradient(180deg, var(--card), transparent 80%), rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 22px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+            backdrop-filter: blur(12px);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(700px 220px at 10% 0%, rgba(255, 77, 141, .22), transparent 55%), radial-gradient(520px 240px at 90% 20%, rgba(255, 122, 182, .18), transparent 55%);
+            opacity: .7;
+            pointer-events: none;
+        }
+        /* left hero */
+        
+        .hero {
+            padding: 28px 28px 22px;
+        }
+        
+        .tag {
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(255, 77, 141, .14);
+            border: 1px solid rgba(255, 77, 141, .28);
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 13px;
+            letter-spacing: .2px;
+            box-shadow: var(--glow);
+        }
+        
+        .tag .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--pink);
+            box-shadow: 0 0 12px rgba(255, 77, 141, .7);
+        }
+        
+        h1 {
+            margin: 16px 0 6px;
+            font-size: clamp(34px, 4.2vw, 56px);
+            line-height: 1.05;
+            letter-spacing: -.6px;
+        }
+        
+        h1 .grad {
+            background: linear-gradient(90deg, #fff, #ffd1e3 35%, #ff6aa7 75%, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 40px rgba(255, 77, 141, .15);
+        }
+        
+        .sub {
+            margin: 10px 0 18px;
+            color: var(--muted);
+            font-size: 15.5px;
+            line-height: 1.6;
+            max-width: 62ch;
+        }
+        
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+        }
+        
+        button {
+            border: 0;
+            border-radius: 14px;
+            padding: 12px 14px;
+            color: var(--text);
+            font-weight: 650;
+            cursor: pointer;
+            transition: transform .08s ease, filter .2s ease, background .2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+        }
+        
+        button:active {
+            transform: scale(.98);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, rgba(255, 77, 141, .92), rgba(255, 122, 182, .92));
+            box-shadow: var(--glow);
+        }
+        
+        .btn-ghost {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .14);
+        }
+        
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, .11);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        @media (max-width:520px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+        
+        .mini {
+            padding: 14px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .12);
+        }
+        
+        .mini .k {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        
+        .mini .v {
+            font-size: 18px;
+            margin-top: 6px;
+            font-weight: 750;
+        }
+        
+        .mini .v small {
+            font-weight: 650;
+            color: var(--muted);
+        }
+        /* right */
+        
+        .side {
+            padding: 16px;
+        }
+        
+        .photo {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: radial-gradient(420px 260px at 20% 20%, rgba(255, 77, 141, .25), transparent 60%), radial-gradient(420px 260px at 80% 30%, rgba(255, 122, 182, .18), transparent 60%), rgba(255, 255, 255, .06);
+            position: relative;
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: .92;
+            transform: scale(1.02);
+            filter: saturate(1.05) contrast(1.02);
+        }
+        
+        .photo .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, .25));
+            pointer-events: none;
+        }
+        
+        .note {
+            margin-top: 12px;
+            padding: 14px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, .14);
+            background: rgba(255, 255, 255, .07);
+        }
+        
+        .note h3 {
+            margin: 0 0 8px;
+            font-size: 16px;
+        }
+        
+        .note p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 14.5px;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 12px 14px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            background: rgba(0, 0, 0, .18);
+            color: var(--muted);
+            font-size: 12.5px;
+        }
+        /* modal */
+        
+        .modal {
+            position: fixed;
+            inset: 0;
+            display: none;
+            place-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, .55);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+        }
+        
+        .modal.open {
+            display: grid;
+        }
+        
+        .modal .box {
+            width: min(720px, 100%);
+            border-radius: 22px;
+            padding: 18px;
+            background: rgba(20, 14, 34, .72);
+            border: 1px solid rgba(255, 255, 255, .14);
+            box-shadow: 0 30px 90px rgba(0, 0, 0, .55);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal .box::before {
+            content: "";
+            position: absolute;
+            inset: -3px;
+            background: radial-gradient(700px 280px at 10% 0%, rgba(255, 77, 141, .28), transparent 60%), radial-gradient(600px 260px at 90% 20%, rgba(255, 122, 182, .22), transparent 60%);
+            opacity: .65;
+            pointer-events: none;
+        }
+        
+        .modal .content {
+            position: relative;
+        }
+        
+        .modal h2 {
+            margin: 0 0 10px;
+            font-size: 26px;
+            letter-spacing: -.3px;
+        }
+        
+        .modal .letter {
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 18px;
+            padding: 14px;
+            color: rgba(255, 255, 255, .86);
+            line-height: 1.8;
+            font-size: 15px;
+            white-space: pre-wrap;
+        }
+        
+        .modal .x {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .14);
+            color: var(--text);
+            cursor: pointer;
+        }
+        /* floating hearts */
+        
+        .heart {
+            position: fixed;
+            left: var(--x);
+            top: 110%;
+            width: var(--s);
+            height: var(--s);
+            transform: translate(-50%, 0) rotate(45deg);
+            background: rgba(255, 77, 141, .9);
+            border-radius: 8px;
+            filter: drop-shadow(0 10px 18px rgba(255, 77, 141, .25));
+            opacity: .0;
+            pointer-events: none;
+            z-index: 5;
+            animation: floatUp var(--d) linear forwards;
+        }
+        
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            border-radius: 50%;
+        }
+        
+        .heart::before {
+            left: -50%;
+        }
+        
+        .heart::after {
+            top: -50%;
+        }
+        
+        @keyframes floatUp {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, 0) rotate(45deg) scale(.85);
+            }
+            10% {
+                opacity: .85;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(calc(-50% + var(--drift)), -140vh) rotate(45deg) scale(1.15);
+            }
+        }
+        /* confetti burst */
+        
+        .pop {
+            position: fixed;
+            left: var(--px);
+            top: var(--py);
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .9);
+            pointer-events: none;
+            z-index: 60;
+            animation: pop 900ms ease-out forwards;
+        }
+        
+        @keyframes pop {
+            from {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translate(var(--vx), var(--vy)) scale(.6);
+                opacity: 0;
+            }
+        }
+        /* small badge */
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        
+        .pulse {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--pink);
+            box-shadow: 0 0 0 0 rgba(255, 77, 141, .55);
+            animation: pulse 1.6s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 77, 141, .55);
+            }
+            70% {
+                box-shadow: 0 0 0 14px rgba(255, 77, 141, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 77, 141, 0);
+            }
+        }
+        
+        a {
+            color: inherit
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stars"></div>
+
+    <div class="wrap">
+        <div class="container">
+            <!-- LEFT -->
+            <section class="card hero">
+                <div class="tag"><span class="dot"></span><span id="tagLine">Valentine 2026 • Made with love</span></div>
+
+                <h1>
+                    <span class="grad" id="headline">Gửi <span id="toName">Bé Yêu</span> 💘</span><br/>
+                    <span style="opacity:.92">một vũ trụ dễ thương dành riêng cho tụi mình</span>
+                </h1>
+
+                <p class="sub" id="subtext">
+                    Anh/Em có một bí mật: mỗi lần em/anh cười là tim anh/em “đơ” 0.5s rồi mới đập lại 😳 Trang này là món quà nhỏ, nhưng tình cảm thì to bự nha.
+                </p>
+
+                <div class="actions">
+                    <button class="btn-primary" id="btnOpen">💌 Mở thư tình</button>
+                    <button class="btn-ghost" id="btnYes">💍 Đồng ý yêu thêm 10000 năm</button>
+                    <button class="btn-ghost" id="btnHearts">💖 Thả tim trời rơi</button>
+                    <button class="btn-ghost" id="btnCopy">📎 Copy link lời nhắn</button>
+                </div>
+
+                <div class="badge">
+                    <span class="pulse"></span>
+                    <span id="countdown">Đếm ngược đến Valentine…</span>
+                </div>
+
+                <div class="grid">
+                    <div class="mini">
+                        <div class="k">Ngày tụi mình bắt đầu</div>
+                        <div class="v" id="since">22/02/2024 <small>(tùy bạn sửa)</small></div>
+                    </div>
+                    <div class="mini">
+                        <div class="k">Số ngày đã yêu</div>
+                        <div class="v"><span id="days">0</span> <small>ngày</small></div>
+                    </div>
+                    <div class="mini">
+                        <div class="k">Điều anh thích ở em</div>
+                        <div class="v" id="fav">“Nụ cười + sự "dịu dàng"”</div>
+                    </div>
+                    <div class="mini">
+                        <div class="k">Lời hứa nhỏ</div>
+                        <div class="v" id="promise">“Mãi iu emmm”</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RIGHT -->
+            <aside class="card side">
+                <div class="photo">
+                    <!-- ĐỔI ẢNH Ở ĐÂY: thay src thành ảnh của 2 bạn -->
+                    <img id="photoImg" src="../img/emiu.jpg" alt="Ảnh tụi mình" />
+                    <div class="overlay"></div>
+                </div>
+
+                <div class="note">
+                    <h3>🌙 Lời nhắn nhanh</h3>
+                    <p id="quickNote">
+                        Nếu hôm nay có hơi mệt thì dựa vào anh một chút nha. Còn nếu hôm nay vui thì… mình vui chung gấp đôi.
+                    </p>
+                </div>
+
+                <div class="footer">
+                    <span>✨ Tip: bấm “Đồng ý yêu thêm…” để có hiệu ứng bất ngờ</span>
+                    <span>© <span id="fromName">Người thương</span></span>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="box">
+            <button class="x" id="btnClose" aria-label="Close">✕</button>
+            <div class="content">
+                <h2>💌 Thư gửi <span id="letterTo">Bé Yêu</span></h2>
+                <div class="letter" id="letter">
+                    Em à, Anh muốn nói rằng anh rất biết ơn vì em đã xuất hiện trong cuộc đời anh. Mình không cần ngày nào cũng hoàn hảo, chỉ cần có nhau là đủ “đúng”. Valentine này, anh chỉ xin 1 điều: Cho anh được thương em lâu thật lâu. Yêu em.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ====== BẠN CHỈ CẦN SỬA MẤY DÒNG NÀY ======
+        const CONFIG = {
+            toName: "Bé Yêu",
+            fromName: "Phúc",
+            startDate: "2024-02-22", // ngày bắt đầu yêu (YYYY-MM-DD)
+            favorite: "“Nụ cười + sự 'dịu dàng'”",
+            promise: "“Mãi iu emmm”",
+            quickNote: "Dù bận đến đâu, phải nhớ ăn uống đầy đủ và ngủ sớm nha pé. Anh luôn ở đây vì em.",
+            subtext: "Anh có một bí mật: mỗi lần em cười là tim anh “đơ” 0.5s rồi mới đập lại 😳\nTrang này là món quà nhỏ, nhưng tình cảm thì to bự nha.",
+            letter: `Pé iu oi,
+
+Anh muốn nói là anh thật sự rất thương emm và anh rất vui vì em đã xuất hiện và đồng hành cùng anh.
+
+Tuy rằng đôi lúc chúng ta hay cãi nhau, hmmm chỉ vì hong ai hiểu ai. Anh biết là khi yêu xa thì mình cần phải cố gắng khiến anh thấy thời gian bên nhau thật xa xỉ anh chỉ muốn những lúc này trôi chậm lại để anh được bên em.
+
+Nhưng em biết hong anh chưa từng ghét bỏ em hay gì hết, những lần giận dỗi cũng vì anh lo cho em nên anh mới la em :((( anh hong mún làm em buồn anh xin lỗi nhaa, những lúc anh im lặng cũng là lúc anh buồn( buồn thật sự), buồn vì ngta hong hiểu mình, buồn vì những lời em và anh nói trong lúc cãi nhau, anh sẽ cố gắng thấu hiểu em hơn.
+
+Anh không hứa sẽ không bao giờ khiến em buồn nữa – vì anh cũng chỉ là một người đang học cách yêu, đang tập cách lắng nghe. Nhưng anh hứa sẽ luôn cố gắng. Cố gắng để tin tưởng hơn, để nói ra những điều trong lòng thay vì giữ kín, và để nhớ rằng, sau tất cả, điều anh muốn nhất vẫn là thấy em cười.
+
+Valentine này, anh chỉ xin 1 điều:
+Cho anh được thương em lâu thật lâu.
+
+Yêu em.`
+        };
+        // ========================================
+
+        const $ = (s) => document.querySelector(s);
+        const toNameEl = $("#toName");
+        const fromNameEl = $("#fromName");
+        const sinceEl = $("#since");
+        const daysEl = $("#days");
+        const favEl = $("#fav");
+        const promiseEl = $("#promise");
+        const quickNoteEl = $("#quickNote");
+        const subtextEl = $("#subtext");
+        const letterEl = $("#letter");
+        const letterToEl = $("#letterTo");
+        const countdownEl = $("#countdown");
+        const headlineEl = $("#headline");
+
+        function pad(n) {
+            return String(n).padStart(2, "0");
+        }
+
+        function formatVN(d) {
+            return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
+        }
+
+        function applyConfig() {
+            toNameEl.textContent = CONFIG.toName;
+            fromNameEl.textContent = CONFIG.fromName;
+            favEl.textContent = CONFIG.favorite;
+            promiseEl.textContent = CONFIG.promise;
+            quickNoteEl.textContent = CONFIG.quickNote;
+            subtextEl.textContent = CONFIG.subtext;
+            letterEl.textContent = CONFIG.letter;
+            letterToEl.textContent = CONFIG.toName;
+            headlineEl.innerHTML = `Gửi <span id="toName">${CONFIG.toName}</span> 💘`;
+            // since display
+            const start = new Date(CONFIG.startDate + "T00:00:00");
+            sinceEl.textContent = formatVN(start);
+        }
+
+        function calcDays() {
+            const start = new Date(CONFIG.startDate + "T00:00:00");
+            const now = new Date();
+            const diff = now - start;
+            const day = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+            daysEl.textContent = day.toLocaleString("vi-VN");
+        }
+
+        function nextValentine() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const vThis = new Date(year + "-02-14T00:00:00");
+            const vNext = (now <= vThis) ? vThis : new Date((year + 1) + "-02-14T00:00:00");
+            return vNext;
+        }
+
+        function tickCountdown() {
+            const now = new Date();
+            const v = nextValentine();
+            const ms = v - now;
+            const total = Math.max(0, ms);
+            const s = Math.floor(total / 1000);
+            const d = Math.floor(s / 86400);
+            const h = Math.floor((s % 86400) / 3600);
+            const m = Math.floor((s % 3600) / 60);
+            countdownEl.textContent =
+                (ms >= 0) ?
+                `Đếm ngược đến Valentine: ${d} ngày ${h} giờ ${m} phút` :
+                `Happy Valentine 💘`;
+        }
+
+        function spawnHeart(intensity = 12) {
+            for (let i = 0; i < intensity; i++) {
+                const h = document.createElement("div");
+                h.className = "heart";
+                const x = Math.random() * 100;
+                const size = 10 + Math.random() * 18;
+                const dur = 3.2 + Math.random() * 2.6;
+                const drift = (Math.random() * 140 - 70) + "px";
+                h.style.setProperty("--x", x + "vw");
+                h.style.setProperty("--s", size + "px");
+                h.style.setProperty("--d", dur + "s");
+                h.style.setProperty("--drift", drift);
+
+                // random shade
+                const shade = 75 + Math.random() * 25;
+                h.style.background = `hsla(340, 100%, ${shade}%, .92)`;
+
+                document.body.appendChild(h);
+                setTimeout(() => h.remove(), dur * 1000 + 200);
+            }
+        }
+
+        function confettiBurst(cx, cy, pieces = 22) {
+            for (let i = 0; i < pieces; i++) {
+                const p = document.createElement("div");
+                p.className = "pop";
+                p.style.setProperty("--px", cx + "px");
+                p.style.setProperty("--py", cy + "px");
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 40 + Math.random() * 120;
+                const vx = Math.cos(angle) * dist;
+                const vy = Math.sin(angle) * dist;
+                p.style.setProperty("--vx", vx + "px");
+                p.style.setProperty("--vy", vy + "px");
+                p.style.background = `hsla(${Math.random()*360}, 90%, 70%, .95)`;
+                document.body.appendChild(p);
+                setTimeout(() => p.remove(), 950);
+            }
+        }
+
+        // modal
+        const modal = $("#modal");
+        $("#btnOpen").addEventListener("click", () => {
+            modal.classList.add("open");
+            spawnHeart(18);
+        });
+        $("#btnClose").addEventListener("click", () => modal.classList.remove("open"));
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) modal.classList.remove("open");
+        });
+
+        // buttons
+        $("#btnHearts").addEventListener("click", () => spawnHeart(26));
+
+        $("#btnYes").addEventListener("click", (e) => {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            confettiBurst(cx, cy, 32);
+            spawnHeart(36);
+
+            // cute popup text
+            const msg = document.createElement("div");
+            msg.style.position = "fixed";
+            msg.style.left = cx + "px";
+            msg.style.top = (cy - 18) + "px";
+            msg.style.transform = "translate(-50%,-50%)";
+            msg.style.padding = "10px 12px";
+            msg.style.borderRadius = "14px";
+            msg.style.background = "rgba(255,255,255,.10)";
+            msg.style.border = "1px solid rgba(255,255,255,.18)";
+            msg.style.backdropFilter = "blur(10px)";
+            msg.style.boxShadow = "0 20px 60px rgba(0,0,0,.35)";
+            msg.style.color = "rgba(255,255,255,.92)";
+            msg.style.fontWeight = "750";
+            msg.textContent = "Deal! Yêu thêm 10000 năm nữa nha 💍💘";
+            document.body.appendChild(msg);
+            setTimeout(() => msg.remove(), 2200);
+        });
+
+        $("#btnCopy").addEventListener("click", async() => {
+            const text = `Gửi ${CONFIG.toName} 💘\n\n${CONFIG.letter}\n\n— ${CONFIG.fromName}`;
+            try {
+                await navigator.clipboard.writeText(text);
+                spawnHeart(10);
+                alert("Đã copy lời nhắn rồi nè 💘");
+            } catch {
+                prompt("Copy thủ công nè:", text);
+            }
+        });
+
+        // click anywhere => small hearts
+        window.addEventListener("pointerdown", (e) => {
+            if (modal.classList.contains("open")) return;
+            const h = document.createElement("div");
+            h.className = "heart";
+            const size = 12 + Math.random() * 10;
+            h.style.setProperty("--x", (e.clientX / window.innerWidth) * 100 + "vw");
+            h.style.setProperty("--s", size + "px");
+            h.style.setProperty("--d", (2.6 + Math.random() * 1.6) + "s");
+            h.style.setProperty("--drift", (Math.random() * 80 - 40) + "px");
+            h.style.background = `hsla(340, 100%, ${78+Math.random()*18}%, .92)`;
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 4500);
+        });
+
+        // init
+        applyConfig();
+        calcDays();
+        tickCountdown();
+        setInterval(() => {
+            calcDays();
+            tickCountdown();
+        }, 1000);
+
+        // soft ambient hearts
+        setInterval(() => spawnHeart(4), 1800);
+    </script>
+</body>
+
+</html>
